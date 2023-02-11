@@ -1,0 +1,6 @@
+<div>
+  <h1>Pushkar Test</h1>
+  <app-form-post (onPost)="onPost($event)"></app-form-post>
+  <app-post *ngFor="let p of posts" [post]="p"></app-post>
+
+</div>
