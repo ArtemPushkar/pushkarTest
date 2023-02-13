@@ -18,4 +18,10 @@ export class AppComponent {
   onPost(post:Post) {
     this.posts.unshift(post)
   }
+
+  condition = true
+
+  toggle(){
+    this.condition=!this.condition;
+  }
 }
