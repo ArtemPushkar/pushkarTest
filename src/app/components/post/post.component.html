@@ -1,4 +1,5 @@
-<div *ngIf="post">
+<div class="card" *ngIf="post">
   <h2>{{post.title}}</h2>
   <p>{{post.text}}</p>
+  <ng-content></ng-content>
 </div>
