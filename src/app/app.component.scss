@@ -1,0 +1,25 @@
+.searchForm {
+  display : inline-flex;
+}
+
+.searchForm button {
+  height: min-content;
+  margin-top: 10px;
+  width: 20%;
+  padding: 10px;
+  background: #2196F3;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+.searchForm input {
+  margin-top: 10px;
+  padding: 10px;
+  font-size: 17px;
+}
+
+.searchForm button:hover {
+  background: #0b7dda;
+}
+

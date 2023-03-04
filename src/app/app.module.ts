@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { PostComponent } from './components/post/post.component';
 import { FormPostComponent } from './components/form-post/form-post.component';
 import {FormsModule} from "@angular/forms";
+import {StyleDirective} from "./directives/style.directive";
+import { FilterPipe } from './pipes/filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
-    FormPostComponent
+    FormPostComponent,
+    StyleDirective,
+    FilterPipe
   ],
     imports: [
         BrowserModule,

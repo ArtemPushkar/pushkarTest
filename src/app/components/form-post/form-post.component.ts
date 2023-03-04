@@ -1,4 +1,4 @@
-import {Component, ElementRef, EventEmitter, OnInit, Output, ViewChild} from '@angular/core';
+import {Component, ElementRef, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {Post} from "../../app.component";
 
 @Component({
@@ -9,7 +9,7 @@ import {Post} from "../../app.component";
 export class FormPostComponent implements OnInit {
 
   @Output() onPost:EventEmitter<Post> = new EventEmitter<Post>()
-  @ViewChild('focusElem') elementFocus: ElementRef | undefined | null
+  @ViewChild('focusElem') elementFocus: ElementRef = new ElementRef(null)
 
   constructor() { }
 
@@ -30,7 +30,7 @@ export class FormPostComponent implements OnInit {
   }
 
   addFocus() {
-    // @ts-ignore
-    this.elementFocus.nativeElement.focus()
+   this.elementFocus.nativeElement.focus()
   }
+
 }

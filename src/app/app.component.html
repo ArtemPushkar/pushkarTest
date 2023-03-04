@@ -1,13 +1,26 @@
 <div>
-  <h1>Pushkar Test</h1>
 
+  <!-- Load icon library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- The form -->
+  <form class="searchForm">
+    <input type="text" placeholder="Search..." name="search" [(ngModel)]="search">
+    <button type="submit"><i class="fa fa-search"></i></button>
+    <button (click)="searchField = 'title'">Title</button>
+    <button (click)="searchField = 'text'">Text</button>
+  </form>
+
+  <h1>Pushkar Test</h1>
+  <p>{{currentTime | async | date:'HH:mm:ss'}}</p>
+  <button (click)="testPost()">Test post</button>
   <app-form-post (onPost)="onPost($event)"></app-form-post>
 
-  <app-post *ngFor="let p of posts" [post]="p">
-    <small *ngIf="p.text.length<10; else long">The post is small</small>
-    <ng-template #long>
-      <small>The post is long</small>
-    </ng-template>
+  <app-post *ngFor="let p of posts | filter:search:searchField" [post]="p">
+      <small *ngIf="p.text.length<10; else long">The post is small</small>
+      <ng-template #long>
+        <small>The post is long</small>
+      </ng-template>
+    <p>{{date | date}}</p>
   </app-post>
 
 
